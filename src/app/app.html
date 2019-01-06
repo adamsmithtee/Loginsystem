@@ -1,0 +1,34 @@
+<ion-menu [content]="content" >
+ 
+
+  <ion-header style=" background: url('assets/img/19.jpg') center / cover;
+  height:200px;">
+    <!-- <ion-toolbar >
+      <ion-title>Menus</ion-title>
+    </ion-toolbar> -->
+<div text-center style="margin-top:50px;">
+    <!-- <img src = "../assets/imgs/sport.jpg" class="imgz"/> -->
+    <img src = "{{userImageUrl || 'assets/img/user-img-lg.jpg' }}" class="imgz"/>
+    <p> {{userEmail}}</p>
+
+  </div>
+  </ion-header>
+
+  <ion-content >
+    <ion-list no-lines  >
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon item-start [name]="p.icon"> </ion-icon> {{p.title}} 
+      </button>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+    <button ion-item full color ="button" style="height:50px; font-size:20px;" (click)= "logOutUser()"><i class="fas fa-sign-out-alt"></i> &nbsp; Logout</button>
+  </ion-footer>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+
+<!-- *ngIf=userLoggedIn -->

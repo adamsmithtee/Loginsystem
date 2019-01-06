@@ -1,0 +1,38 @@
+page-sign {
+    @keyframes animatedBackground {
+		from { background-position: 0 0; }
+		to { background-position: 100% 0; }
+	}
+
+    .content{
+        background: url('../assets/img/blue.jpg') center / cover;
+        background-position: 0px 0px;
+        background-repeat: repeat-x;
+        animation: animatedBackground 50s linear infinite;
+        // background-color: blue;
+    }
+    .span{
+        // float: right;
+        // margin-top: 15px;
+        font-size: 15px;
+        color: #f44336;
+    }
+
+    ion-input{
+        border:2px solid rgb(29, 83, 233) ;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    /*
+    .center{
+        position: relative;
+        width: 100%;
+        top:50%;
+        
+    }*/
+
+
+
+}
+

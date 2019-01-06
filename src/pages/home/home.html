@@ -1,0 +1,78 @@
+<ion-header >
+  <ion-navbar >
+    <button ion-button menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   
+
+  <!-- <h3>Ionic Menu Starter</h3>
+
+  <p>
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+  </p> -->
+
+  <p> {{firstname}} </p>
+
+  <!-- <div class="center">
+  <button ion-button round class="ion-button" color="button" (click) = "redirectToSigninPage();">Sign in </button> <br/> <br/> <br/>
+
+  Don't have an account? click <span (click) ="redirectToSignupPage()" style="color:#f44336;"> here </span> to sign up
+  
+</div> -->
+<ion-card *ngFor= "let post of userPostList">
+    
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{userPhoto || 'assets/img/user-img-lg.jpg'}}">
+        </ion-avatar>
+        <h2>{{post.firstname}} {{post.lastName}} </h2>
+        <p>{{post.date}} {{post.month}} {{post.year}} </p>
+      </ion-item>
+    
+      <!-- <img src="img/advance-card-bttf.png"> -->
+    
+      <ion-card-content>
+        <p> {{post.body}}</p>
+        <p> {{post.uid}}</p>
+      </ion-card-content>
+    
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>12 Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>4 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+            {{post.hour}} {{post.minutes}}
+          </ion-note>
+        </ion-col>
+      </ion-row>
+    
+    </ion-card>
+
+</ion-content>
+
+<ion-footer>
+    
+      <ion-title style="text-align:center;"> <button ion-button clear color="button" (click) = "redirectToUsersProfile();"> see list of users </button> </ion-title>
+ 
+  </ion-footer>
